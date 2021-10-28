@@ -1,0 +1,27 @@
+.donutContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.donut {
+  width: 2rem;
+  height: 2rem;
+  margin: 2rem;
+  border-radius: 50%;
+  border: 0.3rem solid rgba(#ffcd1e, 0.8);
+  border-top-color: #ff008e;
+  animation: 1.5s spin infinite linear;
+
+  &.multi {
+    border-bottom-color: #ff008e;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,120 @@
+.sendMessageFormWrapper {
+  display: flex;
+  flex-direction: column;
+  background: #1b1b1f;
+  padding: 24px;
+  align-self: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.signOutButton {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background-color: transparent;
+  border: 0;
+  color: #c4c4cc;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
+
+.userInformation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .userImage {
+    padding: 3px;
+    border-radius: 50%;
+    background: linear-gradient(100deg, #ff008e 0%, #ffcd1e 100%);
+    line-height: 0;
+
+    img {
+      width: 94px;
+      height: 94px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid #121214;
+    }
+  }
+
+  .userName {
+    font-size: 24px;
+    line-height: 30px;
+    margin-top: 16px;
+  }
+
+  .userGitHub {
+    display: flex;
+    align-items: center;
+    color: #c4c4cc;
+    margin-top: 8px;
+
+    svg {
+      margin-right: 8px;
+    }
+  }
+}
+
+.sendMessageForm {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  margin-top: 48px;
+  background-color: #202024;
+
+  label {
+    padding: 18px;
+    font-size: 20px;
+    background: #29292e;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  textarea {
+    background-color: transparent;
+    border: 0;
+    padding: 24px;
+    resize: none;
+    height: 160px;
+    color: #e1e1e6;
+    font-size: 16px;
+    line-height: 24px;
+
+    &:focus {
+      outline: 0;
+    }
+
+    &::placeholder {
+      color: #8d8d99;
+    }
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff008e;
+    border: none;
+    margin: 24px;
+    padding: 0 32px;
+    height: 56px;
+    min-height: 56px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    align-self: flex-end;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+}
