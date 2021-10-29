@@ -40,14 +40,18 @@ type AuthResponse = {
 export function AuthProvider(props: AuthProvider) {
   const [user, setUser] = useState<User | null>(null);
   const [stateRequest, setStateRequest] = useState<StateRequest>({
-    signIn: StateRequestEnum.FETCH,
-    profile: StateRequestEnum.FETCH,
+    signIn: StateRequestEnum.SUCCESS,
+    profile: StateRequestEnum.SUCCESS,
   });
 
   const signInUrl =
     "https://github.com/login/oauth/authorize?schope=user&client_id=8545343194f8aa7e99cd";
 
   async function signIn(gitHubCode: string) {
+    setStateRequest((prevState) => ({
+      ...prevState,
+      signIn: StateRequestEnum.FETCH,
+    }));
     const response = await api.post<AuthResponse>("authenticate", {
       code: gitHubCode,
     });
@@ -71,6 +75,10 @@ export function AuthProvider(props: AuthProvider) {
   }
 
   useEffect(() => {
+    setStateRequest((prevState) => ({
+      ...prevState,
+      signIn: StateRequestEnum.FETCH,
+    }));
     const token = localStorage.getItem("@doWhile:token");
 
     if (token) {
